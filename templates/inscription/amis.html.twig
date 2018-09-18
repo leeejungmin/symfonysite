@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello {{ controller_name }}!{% endblock %}
+
+{% block body %}
+
+<section id="commentaires">
+  {% for ami in amis%}
+      <hr>
+        <p>Son username :  {{ami.prenom}}</p>
+        <p>Son email :  {{ami.age}}</p>
+        <p>Son ami :  {{ami.location}}</p>
+
+
+
+          <button type"submit" class="btn btn-danger" onclick="window.location.href='/amisedelete/{{ami.id}}'">Supprime</button>
+
+
+      <hr>
+  {% endfor %}
+  <button type"submit" class="btn btn-success" onclick="window.location.href='/amis/add'">ADD</button>
+</section>
+
+{% endblock %}
